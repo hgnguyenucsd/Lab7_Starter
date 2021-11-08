@@ -78,14 +78,10 @@ export class Router {
       }
     }
 
-    console.log(window.location.hash);
-    console.log(hash);
-
     if (!statePopped && window.location.hash != hash) {
       // console.log(page);
       // console.log(window.Location + hash);
-      console.log("WTF?");
-      history.pushState(page, "", window.location.href + hash);
+      history.pushState(page, "", window.location.pathname + hash);
     }
 
     return this[page]();

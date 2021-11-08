@@ -66,7 +66,7 @@ function initializeServiceWorker() {
 
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", function () {
-      navigator.serviceWorker.register("/sw.js").then(
+      navigator.serviceWorker.register("sw.js").then(
         function (registration) {
           // Registration was successful
           console.log(
@@ -223,7 +223,7 @@ function bindEscKey() {
   document.addEventListener("keydown", (event) => {
     console.log(event.key);
     if (event.key == "Escape") {
-      router.navigate("home", true);
+      router.navigate("home", false);
     }
   });
 }
