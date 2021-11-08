@@ -1,5 +1,5 @@
 # Lab 7 - Starter Code
 
-Henry Nguyen
+Author: Henry Nguyen
 
 https://hgnguyenucsd.github.io/Lab7_Starter/
