@@ -5,7 +5,12 @@
 
 const CACHE_NAME = "lab-7-starter";
 
-var urlsToCache = ["/", "/styles/main.css", "/script/main.js"];
+var urlsToCache = [
+  "/",
+  "assets/styles/main.css",
+  "assets/scripts/main.js",
+  "assets/scripts/Router.js",
+];
 
 // Once the service worker has been installed, feed it some initial URLs to cache
 self.addEventListener("install", function (event) {
@@ -35,19 +40,19 @@ self.addEventListener("activate", function (event) {
 
   event.waitUntil(clients.claim());
 
-  var cacheAllowlist = [];
+  // var cacheAllowlist = [];
 
-  event.waitUntil(
-    caches.keys().then(function (cacheNames) {
-      return Promise.all(
-        cacheNames.map(function (cacheName) {
-          if (cacheAllowlist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
+  // event.waitUntil(
+  //   caches.keys().then(function (cacheNames) {
+  //     return Promise.all(
+  //       cacheNames.map(function (cacheName) {
+  //         if (cacheAllowlist.indexOf(cacheName) === -1) {
+  //           return caches.delete(cacheName);
+  //         }
+  //       })
+  //     );
+  //   })
+  // );
 });
 
 // Intercept fetch requests and store them in the cache
